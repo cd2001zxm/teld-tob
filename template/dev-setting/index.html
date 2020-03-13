@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<!--<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">-->
+<html>
+<!-- Head -->
+<head id="Header">
+  <title></title>
+  <meta charset="utf-8">
+  <link rel="dns-prefetch" href="//web.teld.cn">
+  <link rel="dns-prefetch" href="//resource.teld.cn">
+  <link rel="dns-prefetch" href="//sgi.teld.cn">
+  <link rel="dns-prefetch" href="//mvcone.teld.cn">
+  <link rel="dns-prefetch" href="//mvctwo.teld.cn">
+  <link rel="dns-prefetch" href="//mvcthree.teld.cn">
+  <link rel="dns-prefetch" href="//mvccm.teld.cn">
+  <link rel="dns-prefetch" href="//rp.teld.cn">
+  <link rel="dns-prefetch" href="//restapi.amap.com">
+  <link rel="dns-prefetch" href="//webapi.amap.com">
+  <link rel="dns-prefetch" href="//api.map.baidu.com">
+  <!--<link rel="preconnect" href="https://sgi.teld.cn">-->
+  <!--<link rel="preconnect" href="https://restapi.amap.com">-->
+  <!--<link rel="preconnect" href="https://webapi.amap.com">-->
+  <meta name="renderer" content="webkit">
+  <meta name="description">
+  <!--<meta http-equiv="Content-Type" content="text/html; charset=utf-8">-->
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-capable" content="no">
+
+  <!--<meta http-equiv="Pragma" content="no-cache">-->
+  <!--<meta http-equiv="cache-control" content="no-store">-->
+  <!--<meta http-equiv="Expires" content="-1">-->
+  <!--<meta http-equiv="expires" content="Wed, 20 Jun 2019 22:33:00 GMT">-->
+
+  <link id="frameIcon" rel="shortcut icon">
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/teld_web_114.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="/teld_web_114.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="/teld_web_144.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="/teld_web_144.png" />
+  <link rel="preload" href="platform.config.js?version={version}" as="script" crossorigin="anonymous">
+  <link rel="preload" href="<%=htmlWebpackPlugin.options.resourcePath%>/platform/thirdpart/js/jquery-2.1.4.min.js" as="script" crossorigin="anonymous">
+  <script src="<%=htmlWebpackPlugin.options.resourcePath%>/platform/thirdpart/js/jquery-2.1.4.min.js" crossorigin="anonymous"></script>
+  <script src='platform.config.js?version={version}' crossorigin="anonymous"></script>
+  <script>
+
+    function _isInApp() {
+      return window.navigator.userAgent.indexOf("TeldIosWebView") != -1 || window.navigator.userAgent.indexOf("TeldAndroidWebView") != -1;
+    }
+    function loadAndRusScript(script,cache) {
+      var iscache = cache?cache:false
+      script += "?version={version}"
+      $.ajax({
+        url: script,
+        type: "get",
+        dataType: "script",
+        data: undefined,
+        xhrFields: { withCredentials:false},
+        async:false,
+        cache:iscache
+      });
+    }
+
+    function wrpReadCookie(n) {
+      for (var t, r = n + "=", u = document.cookie.split(";"), i = 0; i < u.length; i++) {
+        for (t = u[i]; t.charAt(0) == " ";)t = t.substring(1, t.length);
+        if (t.indexOf(r) == 0)return t.substring(r.length, t.length)
+      }
+      return null
+    }
+
+
+    if(!wrpReadCookie("teldb")){
+
+      if (window.top != window.self && _isInApp()==false) {
+        window.top.postMessage("gotoLogin", "*");
+        window.location.href = "//web"+ domain+"/blank.html";
+      }else if(window.location.href.indexOf("/bss/AccountBill/CorporateCreditStatement?NoAuth=true")==-1){
+        var oldUrl = "?redirect_uri=" + encodeURIComponent(window.location.href);
+        window.location.href = window.UserCenterUrl + oldUrl;
+      }
+
+    }
+
+    if(wrpReadCookie("teldc")=="1" && window.location.href.indexOf("NoAuth=true")==-1){
+      var oldUrl = "?redirect_uri=" + encodeURIComponent(window.location.href);
+      window.location.href = window.UserCenterUrl + oldUrl;
+    }
+  </script>
+  <!--<link rel="preload" href="https://resource.teld.cn/toc/js/jteld.js?v=2.0" as="script" crossorigin="anonymous">-->
+  <link rel="preload" href="<%=htmlWebpackPlugin.options.resourcePath%>/platform/thirdpart/fonts/fontawesome-webfont.woff?v=4.1.0" as="font" type="font/woff" crossorigin="anonymous">
+  <link rel="preload" href="<%=htmlWebpackPlugin.options.resourcePath%>/platform/thirdpart/fonts/glyphicons-halflings-regular.woff" as="font" type="font/woff" crossorigin="anonymous">
+  <link rel="preload" href="<%=htmlWebpackPlugin.options.resourcePath%>/platform/thirdpart/css/bootstrap.min.css" as="style" crossorigin="anonymous">
+  <link rel="preload" href="<%=htmlWebpackPlugin.options.resourcePath%>/platform/thirdpart/css/font-awesome.min.css" as="style" crossorigin="anonymous">
+  <link rel="preload" href="<%=htmlWebpackPlugin.options.resourcePath%>/platform/teld/css/iconfont.css?version={version}" as="style" crossorigin="anonymous">
+  <link rel="preload" href="<%=htmlWebpackPlugin.options.resourcePath%>/platform/teld/css/beyond.min.css" as="style" crossorigin="anonymous">
+  <link rel="preload" href="<%=htmlWebpackPlugin.options.resourcePath%>/platform/teld/css/teld-default.min.css?version={version}" as="style" crossorigin="anonymous">
+  <link rel="preload" href="<%=htmlWebpackPlugin.options.resourcePath%>/platform/thirdpart/css/cropper.min.css?version={version}" as="style" crossorigin="anonymous">
+  <link rel="preload" href="<%=htmlWebpackPlugin.options.resourcePath%>/platform/thirdpart/css/avatar/avatar.css?version={version}" as="style" crossorigin="anonymous">
+  <link rel="preload" href="<%=htmlWebpackPlugin.options.resourcePath%>/platform/teld/css/skins/azure.min.css?version={version}" as="style" crossorigin="anonymous">
+  <link rel="preload" href="<%=htmlWebpackPlugin.options.resourcePath%>/platform/thirdpart/js/jquery.mobile.custom.min.js" as="script" crossorigin="anonymous">
+  <link rel="preload" href="<%=htmlWebpackPlugin.options.resourcePath%>/platform/thirdpart/js/bootstrap.min.js" as="script" crossorigin="anonymous">
+  <link rel="preload" href="<%=htmlWebpackPlugin.options.resourcePath%>/platform/teld/js/teld-thirdpart.min.js?version={version}" as="script" crossorigin="anonymous">
+  <link rel="preload" href="<%=htmlWebpackPlugin.options.resourcePath%>/platform/teld/js/teld-core.min.js?version={version}" as="script" crossorigin="anonymous">
+  <link rel="preload" href="<%=htmlWebpackPlugin.options.resourcePath%>/platform/teld/js/teld-performance.min.js?version={version}" as="script" crossorigin="anonymous">
+  <link rel="preload" href="<%=htmlWebpackPlugin.options.resourcePath%>/platform/teld/js/teld-components.min.js?version={version}" as="script" crossorigin="anonymous">
+  <link rel="preload" href="<%=htmlWebpackPlugin.options.resourcePath%>/platform/teld/js/teld-before-vue.min.js?version={version}" as="script" crossorigin="anonymous">
+
+  <link rel="preload" href="/frame.js?version={version}" as="script" crossorigin="anonymous">
+  <link rel="preload" href="<%=htmlWebpackPlugin.options.resourcePath%>/platform/teld/js/teld-after-vue.min.js?version={version}" as="script" crossorigin="anonymous">
+
+  <link href="<%=htmlWebpackPlugin.options.resourcePath%>/platform/thirdpart/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous"></link>
+  <link href="<%=htmlWebpackPlugin.options.resourcePath%>/platform/thirdpart/css/font-awesome.min.css" rel="stylesheet" crossorigin="anonymous"></link>
+  <link href="<%=htmlWebpackPlugin.options.resourcePath%>/platform/teld/css/iconfont.css?version={version}" rel="stylesheet" crossorigin="anonymous"></link>
+  <link href="<%=htmlWebpackPlugin.options.resourcePath%>/platform/teld/css/beyond.min.css" rel="stylesheet" crossorigin="anonymous"></link>
+  <link href="<%=htmlWebpackPlugin.options.resourcePath%>/platform/teld/css/teld-default.min.css?version={version}" rel="stylesheet" crossorigin="anonymous"></link>
+  <link href="<%=htmlWebpackPlugin.options.resourcePath%>/platform/thirdpart/css/cropper.min.css?version={version}" rel="stylesheet" crossorigin="anonymous"></link>
+  <link href="<%=htmlWebpackPlugin.options.resourcePath%>/platform/thirdpart/css/avatar/avatar.css?version={version}" rel="stylesheet" crossorigin="anonymous"></link>
+  <link href="<%=htmlWebpackPlugin.options.resourcePath%>/platform/teld/css/skins/azure.min.css?version={version}" rel="stylesheet" crossorigin="anonymous"></link>
+
+  <script>
+
+    //TELD patch:文件下载或直接访问的静态html
+    if(/\.(html|apk|png|jpg|gif).*$/.test(window.location.href)){
+
+      var thref = window.location.href.split("#")[1]
+      thref = thref.substring(1,thref.length)
+      var index = thref.indexOf("/")
+      var furl = thref.substring(index,thref.length)
+      window.location.href="//web" + domain+furl;
+    }
+
+    //一体机调度充电
+    if(window.location.href.indexOf("TPS/PowerDispatchingShowForValiReload?mid=78d807a7-f299-4d60-bc0a-fa325156c4a4")!=-1){
+      if(window.location.href.indexOf("NoAuth")==-1)window.location.href = window.location.href + "&NoAuth=true"
+    }
+
+
+
+    if(window.location.href.indexOf("cm/StationEntranceExit/Index")!=-1 ||
+      window.location.href.indexOf("cm/Equipment/EquipmentMobile")!=-1 ||
+      window.location.href.indexOf("cm/ManagerAnalysis/FranchiseeIndex")!=-1 ||
+      window.location.href.indexOf("cm/TPS/ViewHistoryMonitoring")!=-1 ||
+      window.location.href.indexOf("boss/TPS/AbortReasonManageView")!=-1 ||
+      window.location.href.indexOf("fromApp=true")
+    ){
+      window.customIsInFrame = function () { return true;}
+    }else {
+      window.customIsInFrame = null
+    }
+
+
+  </script>
+
+
+</head>
+<!-- /Head -->
+<!-- Body -->
+<body onload="TeldWebOnLoad()" style="overflow: hidden;" ontouchstart="">
+
+<div class="loading-screen no-show" id="lockscreen">
+  <div class="lock-screen">
+  </div>
+</div>
+<!-- Loading Container -->
+<div class="loading-container loading-inactive" id="innerLoading" style="width: 100%;height: 100%;display: none">
+  <div class="loader-overlay" style="background: #3E4457">
+    <div class="spinner">
+      <div class="bounce1"></div>
+      <div class="bounce2"></div>
+      <div class="bounce3"></div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false" id="progressBar">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-body">
+        <div id="myProgressbar" class="progress">
+          <div class="progress-bar six-sec-ease-in-out" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+          </div>
+        </div>
+        <span id="update" style="display:block"></span>
+        <span id="done"></span>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">取消</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="loader-overlay fade hidden-print hidden-lg hidden-md hidden-sm" style="display:none;opacity: 1;border-top:1px  white solid;" id="smallsearchDiv">
+  <div id="searchDiv" class="input-group navar-search skin-color text-center" style="padding-top:15px;top: 0px;left: 0px;position: absolute;width:100%;height:66px;">
+    <input id="searchCondXs" class="navbar-searchins" type="search" autocomplete="off" size="40" placeholder="请输入搜索内容" onfocus="showRemoveIcon(this, 'removeIconXs');" style="width:60%" onblur="    hideRemoveIcon(this, &quot;removeIconXs&quot;);"><button type="button" id="removeIconXs" class="navbar-searchbtn" style="display: none;" onclick="    $('#searchCondXs').val(''); event.stopPropagation();">
+    <i class="glyphicon glyphicon-remove iconcolor"></i>
+  </button><button type="button" class="navbar-searchbtn" style="" onclick="alert('开发中。。。');event.stopPropagation();">
+    <i class="glyphicon glyphicon-search iconcolor"></i>
+  </button>
+    <button type="button" class="btn btn-default navbar-searchbtn " style="width:15%;margin-left: 5px;" onclick="$('#smallsearchDiv').hide();">
+      取消
+    </button>
+  </div>
+</div>
+
+<!--  /Loading Container -->
+<div id="FrameBody">
+</div>
+
+
+<script src="//webapi.amap.com/maps?v=1.4.15&key=c20e2d5b160ac012d10af2a05fd38528&plugin=AMap.Geolocation,AMap.Scale,AMap.OverView,AMap.ToolBar" crossorigin="anonymous"></script>
+
+<script src="<%=htmlWebpackPlugin.options.resourcePath%>/platform/thirdpart/js/jquery.mobile.custom.min.js" crossorigin="anonymous"></script>
+<script src="<%=htmlWebpackPlugin.options.resourcePath%>/platform/thirdpart/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<script src="<%=htmlWebpackPlugin.options.resourcePath%>/platform/teld/js/teld-thirdpart.min.js?version={version}" crossorigin="anonymous"></script>
+<script src="<%=htmlWebpackPlugin.options.resourcePath%>/platform/teld/js/teld-core.min.js?version={version}" crossorigin="anonymous"></script>
+<script src="<%=htmlWebpackPlugin.options.resourcePath%>/platform/teld/js/teld-performance.min.js?version={version}" crossorigin="anonymous"></script>
+<script>
+
+
+  window.getPreDay = function () {
+    var dateTime=new Date();
+    dateTime=dateTime.setDate(dateTime.getDate()-1);
+    return new Date(dateTime)
+  }
+  function _getAppName(name,url) {
+    var reg = new RegExp(name + "=([^&]*)", "i");
+    var r = url.match(reg);
+    if (r != null) {
+      return r[1];
+    }
+    return null;
+  }
+
+  //平台上下文
+  function _p_context() {
+
+    this.SubApplication = window.location.hash.split("/")[1]
+    if(window.location.hash.indexOf("RService")!=-1){
+      this.SubApplication = _getAppName("appName",window.location.hash);
+    }
+    this.SubModule = window.location.hash.split("/")[2]
+    this.isPlatformIndex = !this.SubApplication ||  this.SubApplication=="" || window.location.href.indexOf("/Frame/")!=-1
+
+  }
+
+  window.p_context = new _p_context();
+
+
+  if(wrpReadCookie("locale"))
+    window.locale = wrpReadCookie("locale")
+
+
+  loadAndRusScript("/i18n/"+window.locale+"/wrp.js");
+  loadAndRusScript("/i18n/"+window.locale+"/app.js");
+
+
+  if(!p_context.isPlatformIndex)
+    loadAndRusScript("/i18n/"+window.locale+"/"+ p_context.SubApplication +".js");
+
+
+  if(!p_context.isPlatformIndex){
+    window.versionKey = "web-"+p_context.SubApplication+"-version"
+  }
+
+  if(window.p_context.SubApplication=="gs"){
+    getDataSync(FrameSGHost+"UserAPI-WEBUI-GetGSCodeInfo", "get", {}, function (psp) {
+      if (psp.state == "1") {
+        var UserCode = psp.data.Code
+        var url = "http://t-bja1-gs.chinacloudapp.cn/cwbase/web/singlelogin.aspx?AuthType=UserMap&AppCode=BI&UserCode="+UserCode
+        window.location.href = url
+      }
+    });
+  }
+
+  function clearAllLocalCache() {
+    localStorage.removeItem(window.NAVBAR_CACHE_KEY)
+    localStorage.removeItem(window.SVG_CACHE_KEY)
+    localStorage.removeItem(window.COLMETA_CACHE_KEY)
+    localStorage.removeItem(window.ROUTER_LIST_CACHE_KEY)
+  }
+
+  window.NAVBAR_CACHE_KEY = "WRPFrameGetNavBar"+ (new Date()).format("yyyyMMdd")
+  var lastDayNavbarCacheKey = "WRPFrameGetNavBar"+getPreDay().format("yyyyMMdd")
+  window.SVG_CACHE_KEY = "WRPFrameGetSVGIcon"+ (new Date()).format("yyyyMMdd")
+  window.lastDaySVGCacheKey = "WRPFrameGetSVGIcon"+getPreDay().format("yyyyMMdd")
+  window.COLMETA_CACHE_KEY = "WRPFrameGetColMetaDatas"+ (new Date()).format("yyyyMMdd")
+  window.lastDayColMetaCacheKey = "WRPFrameGetColMetaDatas"+ window.getPreDay().format("yyyyMMdd")
+  window.ROUTER_LIST_CACHE_KEY = "WRPFrameGetRouterList"+ (new Date()).format("yyyyMMdd")
+  window.lastDayRouterListCacheKey = "WRPFrameGetRouterList"+ window.getPreDay().format("yyyyMMdd")
+
+  clearAllLocalCache()
+
+  //localStorage.removeItem(lastDayNavbarCacheKey)
+  if(window.p_context.SubApplication=="tcs")
+    loadAndRusScript("/jquery.signalR-2.2.3.min.js",true);
+
+  if(!hasNoAuth()){
+    if(localStorage.getItem(window.NAVBAR_CACHE_KEY)){
+      window.WRPGetNavBarResult = JSON.parse(localStorage.getItem(window.NAVBAR_CACHE_KEY))
+      var apps = window.WRPGetNavBarResult.data.App
+      var result = {};
+      var namelist = {}
+      for(var index in apps){
+        var app = apps[index]
+        var id = app.ApplicationID
+        var url = app.ApplicationUrl
+        var name = app.ApplicationName
+        var appName = url.replace("http://","").replace("https://","").split(".")[0]
+        result[appName] = id;
+        namelist[appName] = name;
+      }
+      window.FrameApplicationInfo = result
+      window.ApplilcationNames= namelist
+    }else{
+      getDataSync(FrameSGHost+"WRPFrame-GetNavBar", "get", {}, function (result) {
+        window.WRPGetNavBarResult = result
+        if (result.state == "1") {
+
+          //var data = JSON.parse(result.data);
+          var apps = result.data.App;
+          //localStorage.setItem(window.NAVBAR_CACHE_KEY,JSON.stringify(result))
+          var result = {};
+          var namelist = {}
+          for(var index in apps){
+            var app = apps[index]
+            var id = app.ApplicationID
+            var url = app.ApplicationUrl
+            var name = app.ApplicationName
+            var appName = url.replace("http://","").replace("https://","").split(".")[0]
+            result[appName] = id;
+            namelist[appName] = name;
+          }
+          window.FrameApplicationInfo = result
+          window.ApplilcationNames= namelist;
+        }
+
+      },null,function (result) {
+        ret = "[]";
+      });
+    }
+
+
+  }
+
+  function getWSClientInfo() {
+    var wsMobile = $("#wsMobile").val();
+    var wsPileID = $("#wsPileID").val();
+    var wsPileName = $("#wsPileName").val();
+    var wsPileCode = $("#wsPileCode").val();
+    var wsStaID = $("#wsStaID").val();
+    var wsStaName = $("#wsStaName").val();
+    var wsStaCode = $("#wsStaCode").val();
+    return {
+      wsMobile:wsMobile,
+      wsPileID:wsPileID,
+      wsPileName:wsPileName,
+      wsPileCode:wsPileCode,
+      wsStaID:wsStaID,
+      wsStaName:wsStaName,
+      wsStaCode:wsStaCode
+    }
+  }
+
+
+
+
+</script>
+
+
+<script src="<%=htmlWebpackPlugin.options.resourcePath%>/platform/teld/js/teld-components.min.js?version={version}" crossorigin="anonymous"></script>
+<script src="<%=htmlWebpackPlugin.options.resourcePath%>/platform/teld/js/teld-before-vue.min.js?version={version}" crossorigin="anonymous"></script>
+<script src='/teld-helper-list-17.js?version={version}' crossorigin="anonymous"></script>
+<script src="/frame.js?version={version}" crossorigin="anonymous"></script>
+
+<script src="<%=htmlWebpackPlugin.options.resourcePath%>/platform/teld/js/teld-after-vue.min.js?version={version}" crossorigin="anonymous"></script>
+
+<script>
+
+
+  //function observeChange() {
+  //    // Firefox和Chrome早期版本中带有前缀
+  //    var MutationObserver = window.MutationObserver || window.WebKitMutationObserver || window.MozMutationObserver
+  //
+  //// 选择目标节点
+  //    var target = document.querySelector('#page-body');
+  //
+  //// 创建观察者对象
+  //    var observer = new MutationObserver(function(mutations) {
+  //        mutations.forEach(function(mutation) {
+  //            console.dir(mutation);
+  //        });
+  //    });
+  //
+  //// 配置观察选项:
+  //    var config = { attributes: true, childList: true, characterData: false,attributeOldValue:true,subtree:true}
+  //
+  //// 传入目标节点和观察选项
+  //    observer.observe(target, config);
+  //
+  //// 随后,你还可以停止观察
+  //    //observer.disconnect();
+  //}
+
+
+  function WsStart() {
+    $.connection.hub.logging = true;
+    //window.FrameHost="//localhost.wyqcd.net:9999"
+    var conn = $.connection(window.FrameHost+"/TeldConnection",{"Mobile":window.WrpUserInfo.Mobile});
+
+    conn.start().fail(function (msg) {
+      console.err(msg);
+    });
+
+    conn.received(function (data) {
+
+      if(data == "connected"){
+        window.RemoveGlobelData("openms_mobile");
+        console.log("连接成功！")
+
+        return
+      }
+
+      if(data == "agent not exist!"){
+        window.RemoveGlobelData("openms_mobile");
+        console.log("您不是客服人员")
+        return;
+      }
+
+      var mobile = window.GetGlobelData("openms_mobile");
+      if(mobile && data.Type=="start"){
+        console.log("电话进行中！")
+        return
+      }
+
+      if(mobile && data.Type=="end"){
+        window.RemoveGlobelData("openms_mobile");
+        $("#wsMobile").val("");
+        console.log("通话结束！")
+        var CallOverEvent = $.Event('teld:CallOver');
+        $(document).trigger(CallOverEvent);
+        NotifyWarning("通话结束!")
+        return
+      }
+
+
+      window.SaveGlobelData("openms_mobile",data.CallNo)
+      console.log("------通话开始-----")
+      NotifySuccess("电话接入！");
+
+
+      $("#wsMobile").val($.trim(data.CallNo));
+      var CallInEvent = $.Event('teld:CallIn');
+      var info= {
+        wsMobile:$.trim(data.CallNo),
+        wsPileID:"",
+        wsPileName:"",
+        wsPileCode:"",
+        wsStaID:"",
+        wsStaName:"",
+        wsStaCode:""
+      }
+      $("#page-body").find("div").eq(0).trigger(CallInEvent,[info]);
+      window.location.hash = "/tcs/CustomerInformation/CustomerInformationSearch?mid=9589D002-0F12-4F78-8F30-17F1279FB8DB"
+
+    });
+  }
+
+
+  $(function ($) {
+    if(window.p_context.SubApplication=="tcs"){
+
+      $.when(window.getWrpUserInfo()).then(function () {
+        WsStart()
+      })
+    }
+    //observeChange()
+    document.body.style.overflowX = document.body.style.overflowY = "hidden";
+
+    $("#innerLoading").css("display","none")
+    //document.title = $("#AppFullName").length==0? window.SysDefaultName:$("#AppFullName").val();
+    /**
+     * 设定第一个按钮颜色
+     */
+    $('div[name="ButtonGroup"]').each(function () {
+      $(this).find("button").filter(function () {
+        return $(this).css("display") != "none";
+      }).eq(0).addClass("btn-primary");
+    });
+    //if (!isPC()) phoneSet();
+
+  });
+  function TeldWebOnLoad() {
+
+    if ('serviceWorker' in navigator) {
+
+      // navigator.serviceWorker.register('/plugin/sw.js');
+
+    }
+
+    if(!window.performance || !p_context.isPlatformIndex)return;
+
+    var pageName = "首页";
+    var module = p_context.SubApplication?p_context.SubApplication:"platform"
+    var domain = document.domain;
+    var pageAccessParam = {
+      "filter": JSON.stringify({
+        "PageName": pageName,
+        "ModuleName": module,
+        "WebSite": domain,
+        "FuncId":window.patchNo || "",
+        "WebUrl" : window.location.hash,
+        "FirstScreenTime": parseInt(Teld.Performance.getPerformanceInfo().userEnable)
+      })
+    };
+    window.PVCount(pageAccessParam)
+
+
+  }
+
+</script>
+
+
+<!--  /Body -->
+
+</body>
+</html>

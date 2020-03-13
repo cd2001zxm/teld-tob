@@ -1,0 +1,28 @@
+{
+  "schema": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "label": "Project name"
+    },
+    "description": {
+      "type": "string",
+      "required": true,
+      "label": "Project description",
+      "default": "A Vue.js project"
+    },
+    "author": {
+      "type": "string",
+      "label": "Author"
+    },
+    "private": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "filters": {
+    "**/*.vue": "true"
+  },
+  "skipInterpolation": ["src/**/*.js","**/*.vue","plugin/*.js"],
+  "completeMessage": "To get started:\n\n  cd {{destDirName}}\n  npm install\n  npm run dev"
+}
