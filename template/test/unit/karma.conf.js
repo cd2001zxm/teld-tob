@@ -16,16 +16,16 @@ module.exports = function karmaConfig (config) {
     reporters: ['spec', 'coverage'],
     hostname:'localhost.wyqcd.cn',
     files: [
-      //'./script/teld-helper-list-17',//文档替换成自己项目的
       './sg.mock.js',
       './script/i18n/zh/wrp.js',
       './script/i18n/zh/app.js',
-      './script/platform.config.cn.js',
+      './script/platform.config.js',
       './script/jquery-2.1.4.js',
       './script/bootstrap.min.js',
       './script/teld-thirdpart.min.js',
       './script/teld-core.min.js',
       './script/window-variable.js',
+      './script/teld-helper-list-17',
       './script/teld-performance.min.js',
       './script/teld-components.min.js',
       './script/teld-before-vue.min.js',
