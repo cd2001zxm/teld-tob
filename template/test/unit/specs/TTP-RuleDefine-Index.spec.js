@@ -29,6 +29,7 @@ describe('规则定义列表', () => {
     let button = wrapper.find('#BtnSearch')
     button.trigger('click')
     let trs = wrapper.findAll("#gridBodyDiv_rule_set_table tr")
+
     //判断绘制的表格行数是否达到预期
     expect(trs.length).to.equal(10)
   })

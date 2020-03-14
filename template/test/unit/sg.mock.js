@@ -3,6 +3,8 @@
  */
 /*********************************************
  * SID为key
+ * 根据参数mock
+ * ddp上报集成
  */
 window.mockData = {
   'WRPFrame-GetNavBar': {
@@ -1990,159 +1992,163 @@ window.mockData = {
       'SVGIcon': 'data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSLlm77lsYJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMTAyNCAxMDI0IiAgZmlsbD0iY3VycmVudENvbG9yIj4NCjxnPg0KCTxwYXRoIGQ9Ik03MDcuMyw4NzJoNC4zYy00NC41LTUuNi02OC4yLTIzLjMtODAuOC00MS4zSDQwMC41Yy0xMi42LDE4LTM2LjMsMzUuNy04MC44LDQxLjNoMi44Yy0xMy45LDAtMjUsMTEuMy0yNSwyNQ0KCQljMCwxMy45LDExLjMsMjUsMjUsMjVoMzg0LjhjMTMuOSwwLDI1LTExLjMsMjUtMjVDNzMyLjUsODgzLjEsNzIxLjIsODcyLDcwNy4zLDg3MnoiLz4NCgk8cGF0aCBkPSJNODk5LjcsOTBIMTMwYy0zNi4xLDAtNjUuNCwyOS4zLTY1LjQsNjUuNHY1NzguOGMxLjEsMzAuNywyNi41LDU1LjQsNTcuNyw1NS40aDc4NS4xYzMxLjEsMCw1Ni40LTI0LjYsNTcuNy01NS40DQoJCWwwLjItMTA3LjlWMTU1LjNDOTY1LjEsMTE5LjIsOTM1LjgsOTAsODk5LjcsOTB6IE01NjcuMSw3MjYuN2MwLDgtNi41LDE0LjQtMTQuNSwxNC40aC03NS44Yy04LDAtMTQuNS02LjUtMTQuNS0xNC40di0xMA0KCQljMC04LDYuNS0xNC40LDE0LjUtMTQuNGg3NS44YzgsMCwxNC41LDYuNSwxNC41LDE0LjRWNzI2Ljd6IE05MTEsNjM3LjZjMCw2LjMtNSwxMS41LTExLjMsMTEuNUgxMzBjLTYuMywwLTExLjUtNS4yLTExLjUtMTEuNQ0KCQlWMTU1LjNjMC02LjMsNS4yLTExLjUsMTEuNS0xMS41aDc2OS41YzYuMywwLDExLjUsNS4yLDExLjUsMTEuNVY2MzcuNnoiLz4NCgk8cG9seWdvbiBwb2ludHM9IjI5MS45LDMxMS40IDUxNy43LDQ1Ny42IDc0My40LDMxMS40IDUxNy43LDE2NS4yIAkiLz4NCgk8cG9seWdvbiBwb2ludHM9IjUxNy43LDQ5MC4yIDMxOC40LDM2NiAyOTEuOSwzOTIgNTE3LjcsNTM4LjIgNzQzLjQsMzkyIDcxNi42LDM2NS40IAkiLz4NCgk8cG9seWdvbiBwb2ludHM9IjUxNy43LDU3MC44IDMxOC40LDQ0Ni41IDI5MS45LDQ3Mi41IDUxNy43LDYxOC43IDc0My40LDQ3Mi41IDcxNi42LDQ0NS45IAkiLz4NCjwvZz4NCjwvc3ZnPg0K'
     }]
   },
-  'TTP-RE_GetRuleSetList-V0101': {
-    'data': {
-      'rows': [{
-        'HsfDep': 1,
-        'ID': 'cacbafa9-baa7-48cb-9b28-c56e199e1c65',
-        'Code': 'em000022',
-        'Name': 'chendong@teld.cn',
-        'AppID': 'em',
-        'LastModifier': '陈栋',
-        'LastModifierTime': '2020-01-03 14:06:34',
-        'Creator': '陈栋',
-        'CreateTime': '2020-01-03 14:06:34',
-        'GroupID': '162e1a4c-4347-4de6-92a0-febece6ac243',
-        'GroupName': '促销',
-        'page': 0,
-        'rows': 0,
-        'totalCount': 27
-      }, {
-        'HsfDep': 1,
-        'ID': 'db60ea52-be8f-47df-a6e0-68cd44943499',
-        'Code': 'ctms000002',
-        'Name': 'rrr8888',
-        'AppID': 'ctms',
-        'LastModifier': '刘飞',
-        'LastModifierTime': '2019-12-12 19:14:27',
-        'Creator': '刘飞',
-        'CreateTime': '2019-12-12 19:14:02',
-        'GroupID': '91170601-9bc3-408e-8917-3f02130aaab8',
-        'GroupName': 'gg',
-        'page': 0,
-        'rows': 0,
-        'totalCount': 27
-      }, {
-        'HsfDep': 1,
-        'ID': 'ff2baad8-b244-404d-8d30-f9d4cd7ca7c0',
-        'Code': 'bss000002',
-        'Name': '互联互通会员折扣',
-        'AppID': 'bss',
-        'LastModifier': '',
-        'LastModifierTime': '2019-10-28 17:56:08',
-        'Creator': '张百惠',
-        'CreateTime': '2019-10-22 10:55:20',
-        'GroupID': 'bc1b263b-ddce-4129-9982-d2869577e140',
-        'GroupName': '促销',
-        'page': 0,
-        'rows': 0,
-        'totalCount': 27
-      }, {
-        'HsfDep': 1,
-        'ID': 'e0c8fbcd-24d0-4c48-8712-e65b6309a889',
-        'Code': 'bss000001',
-        'Name': '充值赠券',
-        'AppID': 'bss',
-        'LastModifier': '',
-        'LastModifierTime': '2019-10-25 16:25:42',
-        'Creator': '曹令金',
-        'CreateTime': '2019-10-16 18:07:01',
-        'GroupID': 'bc1b263b-ddce-4129-9982-d2869577e140',
-        'GroupName': '促销',
-        'page': 0,
-        'rows': 0,
-        'totalCount': 27
-      }, {
-        'HsfDep': 1,
-        'ID': 'b1f87dca-5511-4a48-924e-f3d77a448a4e',
-        'Code': 'travel000015',
-        'Name': 'wew',
-        'AppID': 'travel',
-        'LastModifier': '刘飞',
-        'LastModifierTime': '2019-10-06 16:21:16',
-        'Creator': '刘飞',
-        'CreateTime': '2019-10-06 16:21:16',
-        'GroupID': 'be522644-281b-419e-82e7-68316f286039',
-        'GroupName': '11111111',
-        'page': 0,
-        'rows': 0,
-        'totalCount': 27
-      }, {
-        'HsfDep': 1,
-        'ID': 'b082b8c0-ca05-49ba-a29a-4b215e1491d9',
-        'Code': 'travel000014',
-        'Name': 'w',
-        'AppID': 'travel',
-        'LastModifier': '刘飞',
-        'LastModifierTime': '2019-10-06 16:20:15',
-        'Creator': '刘飞',
-        'CreateTime': '2019-10-06 16:20:15',
-        'GroupID': 'be522644-281b-419e-82e7-68316f286039',
-        'GroupName': '11111111',
-        'page': 0,
-        'rows': 0,
-        'totalCount': 27
-      }, {
-        'HsfDep': 1,
-        'ID': '98a1cf92-3750-4132-93c6-d55dea6c23f2',
-        'Code': 'em000021',
-        'Name': '验证实际应用场景',
-        'AppID': 'em',
-        'LastModifier': '刘飞',
-        'LastModifierTime': '2019-09-30 15:18:19',
-        'Creator': '刘飞',
-        'CreateTime': '2019-09-30 15:18:19',
-        'GroupID': '162e1a4c-4347-4de6-92a0-febece6ac243',
-        'GroupName': '促销',
-        'page': 0,
-        'rows': 0,
-        'totalCount': 27
-      }, {
-        'HsfDep': 1,
-        'ID': '94a5e51f-7dc4-4c26-9e12-03ee7fdbb5f9',
-        'Code': 'em000020',
-        'Name': '验证datetime',
-        'AppID': 'em',
-        'LastModifier': '刘飞',
-        'LastModifierTime': '2019-09-30 15:18:05',
-        'Creator': '刘飞',
-        'CreateTime': '2019-09-30 15:18:05',
-        'GroupID': '162e1a4c-4347-4de6-92a0-febece6ac243',
-        'GroupName': '促销',
-        'page': 0,
-        'rows': 0,
-        'totalCount': 27
-      }, {
-        'HsfDep': 1,
-        'ID': '5aff2727-0818-422f-9610-be5181ba6a36',
-        'Code': 'em000019',
-        'Name': '验证bool',
-        'AppID': 'em',
-        'LastModifier': '刘飞',
-        'LastModifierTime': '2019-09-30 15:17:50',
-        'Creator': '刘飞',
-        'CreateTime': '2019-09-30 15:17:50',
-        'GroupID': '162e1a4c-4347-4de6-92a0-febece6ac243',
-        'GroupName': '促销',
-        'page': 0,
-        'rows': 0,
-        'totalCount': 27
-      }, {
-        'HsfDep': 1,
-        'ID': '62270040-4684-4a26-b86e-7a2158204b84',
-        'Code': 'em000018',
-        'Name': '验证double',
-        'AppID': 'em',
-        'LastModifier': '刘飞',
-        'LastModifierTime': '2019-09-30 15:17:35',
-        'Creator': '刘飞',
-        'CreateTime': '2019-09-30 15:17:35',
-        'GroupID': '162e1a4c-4347-4de6-92a0-febece6ac243',
-        'GroupName': '促销',
-        'page': 0,
-        'rows': 0,
-        'totalCount': 27
-      }], 'total': 27
-    }, 'errcode': null, 'errmsg': null, 'state': 1
+  'TTP-RE_GetRuleSetList-V0101':function(param){
+    //可以根据参数返回不同的值
+    //param包含url参数以及post内容参数
+    return {
+      'data': {
+        'rows': [{
+          'HsfDep': 1,
+          'ID': 'cacbafa9-baa7-48cb-9b28-c56e199e1c65',
+          'Code': 'em000022',
+          'Name': 'chendong@teld.cn',
+          'AppID': 'em',
+          'LastModifier': '陈栋',
+          'LastModifierTime': '2020-01-03 14:06:34',
+          'Creator': '陈栋',
+          'CreateTime': '2020-01-03 14:06:34',
+          'GroupID': '162e1a4c-4347-4de6-92a0-febece6ac243',
+          'GroupName': '促销',
+          'page': 0,
+          'rows': 0,
+          'totalCount': 27
+        }, {
+          'HsfDep': 1,
+          'ID': 'db60ea52-be8f-47df-a6e0-68cd44943499',
+          'Code': 'ctms000002',
+          'Name': 'rrr8888',
+          'AppID': 'ctms',
+          'LastModifier': '刘飞',
+          'LastModifierTime': '2019-12-12 19:14:27',
+          'Creator': '刘飞',
+          'CreateTime': '2019-12-12 19:14:02',
+          'GroupID': '91170601-9bc3-408e-8917-3f02130aaab8',
+          'GroupName': 'gg',
+          'page': 0,
+          'rows': 0,
+          'totalCount': 27
+        }, {
+          'HsfDep': 1,
+          'ID': 'ff2baad8-b244-404d-8d30-f9d4cd7ca7c0',
+          'Code': 'bss000002',
+          'Name': '互联互通会员折扣',
+          'AppID': 'bss',
+          'LastModifier': '',
+          'LastModifierTime': '2019-10-28 17:56:08',
+          'Creator': '张百惠',
+          'CreateTime': '2019-10-22 10:55:20',
+          'GroupID': 'bc1b263b-ddce-4129-9982-d2869577e140',
+          'GroupName': '促销',
+          'page': 0,
+          'rows': 0,
+          'totalCount': 27
+        }, {
+          'HsfDep': 1,
+          'ID': 'e0c8fbcd-24d0-4c48-8712-e65b6309a889',
+          'Code': 'bss000001',
+          'Name': '充值赠券',
+          'AppID': 'bss',
+          'LastModifier': '',
+          'LastModifierTime': '2019-10-25 16:25:42',
+          'Creator': '曹令金',
+          'CreateTime': '2019-10-16 18:07:01',
+          'GroupID': 'bc1b263b-ddce-4129-9982-d2869577e140',
+          'GroupName': '促销',
+          'page': 0,
+          'rows': 0,
+          'totalCount': 27
+        }, {
+          'HsfDep': 1,
+          'ID': 'b1f87dca-5511-4a48-924e-f3d77a448a4e',
+          'Code': 'travel000015',
+          'Name': 'wew',
+          'AppID': 'travel',
+          'LastModifier': '刘飞',
+          'LastModifierTime': '2019-10-06 16:21:16',
+          'Creator': '刘飞',
+          'CreateTime': '2019-10-06 16:21:16',
+          'GroupID': 'be522644-281b-419e-82e7-68316f286039',
+          'GroupName': '11111111',
+          'page': 0,
+          'rows': 0,
+          'totalCount': 27
+        }, {
+          'HsfDep': 1,
+          'ID': 'b082b8c0-ca05-49ba-a29a-4b215e1491d9',
+          'Code': 'travel000014',
+          'Name': 'w',
+          'AppID': 'travel',
+          'LastModifier': '刘飞',
+          'LastModifierTime': '2019-10-06 16:20:15',
+          'Creator': '刘飞',
+          'CreateTime': '2019-10-06 16:20:15',
+          'GroupID': 'be522644-281b-419e-82e7-68316f286039',
+          'GroupName': '11111111',
+          'page': 0,
+          'rows': 0,
+          'totalCount': 27
+        }, {
+          'HsfDep': 1,
+          'ID': '98a1cf92-3750-4132-93c6-d55dea6c23f2',
+          'Code': 'em000021',
+          'Name': '验证实际应用场景',
+          'AppID': 'em',
+          'LastModifier': '刘飞',
+          'LastModifierTime': '2019-09-30 15:18:19',
+          'Creator': '刘飞',
+          'CreateTime': '2019-09-30 15:18:19',
+          'GroupID': '162e1a4c-4347-4de6-92a0-febece6ac243',
+          'GroupName': '促销',
+          'page': 0,
+          'rows': 0,
+          'totalCount': 27
+        }, {
+          'HsfDep': 1,
+          'ID': '94a5e51f-7dc4-4c26-9e12-03ee7fdbb5f9',
+          'Code': 'em000020',
+          'Name': '验证datetime',
+          'AppID': 'em',
+          'LastModifier': '刘飞',
+          'LastModifierTime': '2019-09-30 15:18:05',
+          'Creator': '刘飞',
+          'CreateTime': '2019-09-30 15:18:05',
+          'GroupID': '162e1a4c-4347-4de6-92a0-febece6ac243',
+          'GroupName': '促销',
+          'page': 0,
+          'rows': 0,
+          'totalCount': 27
+        }, {
+          'HsfDep': 1,
+          'ID': '5aff2727-0818-422f-9610-be5181ba6a36',
+          'Code': 'em000019',
+          'Name': '验证bool',
+          'AppID': 'em',
+          'LastModifier': '刘飞',
+          'LastModifierTime': '2019-09-30 15:17:50',
+          'Creator': '刘飞',
+          'CreateTime': '2019-09-30 15:17:50',
+          'GroupID': '162e1a4c-4347-4de6-92a0-febece6ac243',
+          'GroupName': '促销',
+          'page': 0,
+          'rows': 0,
+          'totalCount': 27
+        }, {
+          'HsfDep': 1,
+          'ID': '62270040-4684-4a26-b86e-7a2158204b84',
+          'Code': 'em000018',
+          'Name': '验证double',
+          'AppID': 'em',
+          'LastModifier': '刘飞',
+          'LastModifierTime': '2019-09-30 15:17:35',
+          'Creator': '刘飞',
+          'CreateTime': '2019-09-30 15:17:35',
+          'GroupID': '162e1a4c-4347-4de6-92a0-febece6ac243',
+          'GroupName': '促销',
+          'page': 0,
+          'rows': 0,
+          'totalCount': 27
+        }], 'total': 27
+      }, 'errcode': null, 'errmsg': null, 'state': 1
+    }
   }
 }
