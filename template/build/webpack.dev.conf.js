@@ -61,13 +61,13 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       version:'20111111'
     }),
     // copy custom static assets
-    new CopyWebpackPlugin([
-      {
-        from: path.resolve(__dirname, '../static'),
-        to: config.dev.assetsSubDirectory,
-        ignore: ['.*']
-      }
-    ]),
+    // new CopyWebpackPlugin([
+    //   {
+    //     from: path.resolve(__dirname, '../static'),
+    //     to: config.dev.assetsSubDirectory,
+    //     ignore: ['.*']
+    //   }
+    // ]),
     new CopyWebpackPlugin([
       {
         //from的路径，根据自己的开发环境domain进行相应的配置
