@@ -5,9 +5,10 @@ const utils = require('./utils')
 const webpack = require('webpack')
 const merge = require('webpack-merge')
 const baseWebpackConfig = require('./webpack.base.conf')
-const CopyWebpackPlugin = require('copy-webpack-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const TeldBeforeTestMoveFileWebpackPlugin = require('../webpack-plugin/teld-before-test-move-file-webpack-plugin')
 const config = require('../config')
+
+new TeldBeforeTestMoveFileWebpackPlugin().execute()
 
 const webpackConfig = merge(baseWebpackConfig, {
   // use inline sourcemap for karma-sourcemap-loader
@@ -25,7 +26,8 @@ const webpackConfig = merge(baseWebpackConfig, {
   plugins: [
     new webpack.DefinePlugin({
       'process.env': require('../config/test.env')
-    })
+    }),
+    
   ]
 })
 

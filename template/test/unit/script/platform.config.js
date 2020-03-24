@@ -19,7 +19,7 @@ window.FrameServiceHostCSC = "//sgi"+domain+":7777/api/invoke?SID="
 window.FrameServiceHostSYS = "//sgi"+domain+":7777/api/invoke?SID="
 window.FrameSysSrv = "//sgi"+domain+":7777/api/invoke?SID="
 window.OmpSGHost = "//sgi"+domain+":7777/api/invoke?SID="
-
+window.ServiceHost = "//sgi"+domain+":7777"
 //资源服务地址
 window.ResourcePath = "//resource" + domain;
 

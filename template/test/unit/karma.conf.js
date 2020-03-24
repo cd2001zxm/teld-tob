@@ -11,12 +11,16 @@ module.exports = function karmaConfig (config) {
     // 1. install corresponding karma launcher
     //    http://karma-runner.github.io/0.13/config/browsers.html
     // 2. add it to the `browsers` array below.
-    browsers : ['PhantomJS'],
-    frameworks: ['mocha', 'sinon-chai','phantomjs-shim'],//, 'phantomjs-shim'
+    browsers: ['PhantomJS'],
+    frameworks: ['mocha', 'sinon-chai', 'phantomjs-shim'], //, 'phantomjs-shim'
     reporters: ['spec', 'coverage'],
-    hostname:'localhost.wyqcd.cn',
+    hostname: 'localhost.wyqcd.cn',
     files: [
+      './script/bootstrap.min.css',
+      './script/beyond.min.css',
+      './script/teld-default.min.css',
       './sg.mock.js',
+      './ci.cd.param.js',
       './script/i18n/zh/wrp.js',
       './script/i18n/zh/app.js',
       './script/platform.config.js',
@@ -25,7 +29,7 @@ module.exports = function karmaConfig (config) {
       './script/teld-thirdpart.min.js',
       './script/teld-core.min.js',
       './script/window-variable.js',
-      './script/teld-helper-list-17',
+      './script/teld-helper-list-17.js',
       './script/teld-performance.min.js',
       './script/teld-components.min.js',
       './script/teld-before-vue.min.js',
@@ -36,6 +40,7 @@ module.exports = function karmaConfig (config) {
       './index.js': ['webpack', 'sourcemap']
     },
     webpack: webpackConfig,
+    listenAddress: 'localhost',
     webpackMiddleware: {
       noInfo: true
     },
@@ -46,6 +51,7 @@ module.exports = function karmaConfig (config) {
         { type: 'text-summary' }
       ]
     },
-    browserNoActivityTimeout: 120000
+    browserNoActivityTimeout: 240000
+    // processKillTimeout:240000
   })
 }

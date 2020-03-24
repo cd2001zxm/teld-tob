@@ -1,7 +1,7 @@
 /**
  * Created by chendong on 2020/3/12.
  */
-window.helperList17 = {}
+window.helperList17 = window.helperList17 || {}
 window.getApplicationId = function (r) {
   return '2d289948-05d7-462a-bd7e-a4142cd99f1e'
 }
@@ -77,4 +77,64 @@ function _p_context () {
 
 window.p_context = new _p_context()
 
+window.doPostReport = function () {
 
+  var ddpSgService = 'http://sg.wyqcd.com:7777/api/Invoke?SID=TestCaseManager-DDPReportTestCase'
+  for(var index in window.reportData) {
+      var postData = window.reportData[index]
+
+    var UnitTestName = JSON.parse(postData.unitTestCase).UnitTestName
+    $.ajax({
+      url: ddpSgService,
+      type: "post",
+      data: postData,
+      timeout: 2000,
+      async: false,
+      //async:false,
+      cache: false,
+      success: function success(ret, textStatus, xhr) {
+        if(ret && ret.state==1){
+          console.info('['+UnitTestName+']:单测结果上报成功');
+        } else {
+          console.error('['+UnitTestName+']:单测结果上报失败：');
+          console.error(ret.exception)
+        }
+
+      },
+      error: function error(xhr, textStatus, errorThrown) {
+        console.error('['+postData.TestSuiteCode+']:单测结果上报失败：'+errorThrown);
+      }
+
+    })
+  }
+  //window.reportData = []
+}
+
+//拦截测试结果
+var result_fun = window.__karma__.result
+window.__karma__.result = function (result) {
+  // var description = result.description
+  // var suite = result.suite // 数组
+  // console.info(">>>>>>>>>>>>>>>>>>>"+JSON.stringify(result))
+  // if (result.skipped) {
+  //   return
+  // }
+
+
+
+
+  //原始方法调用
+  if(result_fun) result_fun.call(null,result)
+
+}
+var complete_fun = window.__karma__.complete
+window.__karma__.complete = function (result) {
+
+  if(window.getParamFromFile()!=null){
+    console.info(">>>>>>>>>>>>>>>>>>>>>>>>>>>>准备上报数据：")
+    window.doPostReport()
+  }
+
+  //原始方法调用
+  if(complete_fun) complete_fun.call(null,result)
+}
