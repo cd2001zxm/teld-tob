@@ -37,6 +37,7 @@ module.exports = {
     extensions: ['.js', '.vue', '.json'],
     alias: {
       //'vue$': 'vue/dist/vue.esm.js',
+      '@@': resolve('/'),
       '@': resolve('src'),
       'vue': 'vue/dist/vue.runtime.js',
       'vuex': 'vuex/dist/vuex.js',
@@ -57,14 +58,14 @@ module.exports = {
         loader: 'babel-loader',
         include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client'),resolve('config')]
       },
-      {
-        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
-        loader: 'url-loader',
-        // options: {
-        //   limit: 10000,
-        //   name: utils.assetsPath('img/[name].[ext]')
-        // }
-      },
+      // {
+      //   test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+      //   loader: 'url-loader',
+      //   // options: {
+      //   //   limit: 10000,
+      //   //   name: utils.assetsPath('img/[name].[ext]')
+      //   // }
+      // },
       // {
       //   test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
       //   loader: 'url-loader',
