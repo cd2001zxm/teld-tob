@@ -79,7 +79,7 @@ window.p_context = new _p_context()
 
 window.doPostReport = function () {
 
-  var ddpSgService = 'http://sg.wyqcd.com:7777/api/Invoke?SID=TestCaseManager-DDPReportTestCase'
+  var ddpSgService = window.cicdParam.DDPReportUrl
   for(var index in window.reportData) {
       var postData = window.reportData[index]
 
@@ -96,10 +96,9 @@ window.doPostReport = function () {
         if(ret && ret.state==1){
           console.info('['+UnitTestName+']:单测结果上报成功');
         } else {
-          console.error('['+UnitTestName+']:单测结果上报失败：');
+          console.error('[' + UnitTestName + ']:单测结果上报失败：');
           console.error(ret.exception)
         }
-
       },
       error: function error(xhr, textStatus, errorThrown) {
         console.error('['+postData.TestSuiteCode+']:单测结果上报失败：'+errorThrown);
