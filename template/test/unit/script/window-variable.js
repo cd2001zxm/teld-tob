@@ -82,7 +82,7 @@ window.doPostReport = function () {
   var ddpSgService = window.cicdParam.DDPReportUrl
   for(var index in window.reportData) {
       var postData = window.reportData[index]
-
+    var TestSuiteCode = JSON.parse(postData.unitTestCase).TestSuiteCode
     var UnitTestName = JSON.parse(postData.unitTestCase).UnitTestName
     $.ajax({
       url: ddpSgService,
@@ -94,14 +94,14 @@ window.doPostReport = function () {
       cache: false,
       success: function success(ret, textStatus, xhr) {
         if(ret && ret.state==1){
-          console.info('['+UnitTestName+']:单测结果上报成功');
+          console.info(TestSuiteCode+'['+UnitTestName+']:单测结果上报成功');
         } else {
-          console.error('[' + UnitTestName + ']:单测结果上报失败：');
+          console.error(TestSuiteCode+'[' + UnitTestName + ']:单测结果上报失败：');
           console.error(ret.exception)
         }
       },
       error: function error(xhr, textStatus, errorThrown) {
-        console.error('['+postData.TestSuiteCode+']:单测结果上报失败：'+errorThrown);
+        console.error('['+UnitTestName+']:单测结果上报失败：'+errorThrown);
       }
 
     })

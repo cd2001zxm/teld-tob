@@ -3,7 +3,7 @@
  */
 
 var describeProxy = require('mocha').describe;
-console.dir(describeProxy)
+//console.dir(describeProxy)
 
 var testStack = new Array()
 var methodsStack = new Array()
@@ -17,8 +17,9 @@ var methodsStack = new Array()
  * @param testName
  */
 export function defineTest(testMeta,testName,func){
-
-  if(testStack.length>0)testStack=[]
+  //window.alert(testMeta)
+  //if(testStack.length>0)testStack=[]
+  //if(methodsStack.length>0)methodsStack=[]
   testStack.push({
     testMeta:testMeta,
     testName:testName
@@ -34,6 +35,7 @@ export function defineMethod(code,no,methodName,devName,func){
     methodName:methodName,
     devName:devName
   })
+
   return describeProxy(methodName,func)
 }
 
@@ -61,20 +63,43 @@ function GMTToStr(time){
   return Str
 }
 
+function getTestInfoByName(name){
+	for(var i in testStack){
+		var item = testStack[i]
+		if(item.testName == name){
+			return item
+		}
+	}
+	//no this case
+	return null
+}
+
+function getMethodInfoByName(name){
+	for(var i in methodsStack){
+		var item = methodsStack[i]
+		if(item.methodName == name){
+			return item
+		}
+	}
+	//no this case
+	return null
+}
 
 window.reportData = []
 
 export function reportTestResult (currentTest) {
 
 
-
+   //window.alert(currentTest.parent)
 
   //console.log(JSON.stringify(currentTest.$assertionErrors))
 
   //服务器通过文件的方式传递参数
-  var testInfo = testStack[0]
-  var methodInfo = methodsStack.shift()
-
+  var testInfo = getTestInfoByName(currentTest.parent.parent.title)//testStack[0]
+  //window.alert(currentTest.parent.parent.title)
+  var methodInfo = getMethodInfoByName(currentTest.parent.title)
+  
+ // window.alert(methodInfo)
 
   var fileParam = getParamFromFile();
   //非CICD环境不执行上报
